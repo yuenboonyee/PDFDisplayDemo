@@ -38,6 +38,13 @@ class PDFViewController: UIViewController {
         
         let objectsToShare:[AnyObject] = [textToShare, myWebsite!]
         let activityViewController = UIActivityViewController(activityItems: objectsToShare, applicationActivities: nil)
+        
+        activityViewController.excludedActivityTypes = [UIActivityTypeAssignToContact,
+        UIActivityTypeSaveToCameraRoll,
+        UIActivityTypeAddToReadingList,
+        UIActivityTypePostToFlickr,
+        UIActivityTypePostToVimeo];
+
         self.presentViewController(activityViewController, animated: true) { () -> Void in
             
         }
